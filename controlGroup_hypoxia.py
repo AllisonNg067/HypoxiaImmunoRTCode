@@ -14,11 +14,11 @@ import pandas as pd
 from differential_equations_hypoxia import radioimmuno_response_model
 import new_data_processing_hypoxia as dp
 from data_processing import getCellCounts
-data = pd.read_csv("White mice - no treatment.csv")
+data = pd.read_csv("../mouseData/White mice - no treatment.csv")
 #data = data.drop(columns=['3'])
 #print(data.head())
-nit_max = 20
-nit_T = 20
+nit_max = 5
+nit_T = 5
 param = [500000.0,
 0.55,
 0.25,
@@ -130,11 +130,11 @@ for i in range(1, 17):
   plt.legend()
 
   plt.tight_layout()
-  figure_name = "new hypoxia control tumor volume vs time " + str(i) + " .png"
+  figure_name = "setonix hypoxia control tumor volume vs time " + str(i) + " .png"
   plt.savefig(figure_name)
   plt.close()
 
-data = pd.read_csv("White mice data - PD-1 10.csv")
+data = pd.read_csv("../mouseData/White mice data - PD-1 10.csv")
 t_treat_p1 = np.array([10,12,14])
 p1 = 0.2
 for i in range(1,9):
@@ -163,11 +163,11 @@ for i in range(1,9):
   plt.legend()
 
   plt.tight_layout()
-  figure_name = "new hypoxia anti PD L1 10 tumor volume vs time " + str(i) + " .png"
+  figure_name = "setonix hypoxia anti PD L1 10 tumor volume vs time " + str(i) + " .png"
   plt.savefig(figure_name)
   plt.close()
 
-data = pd.read_csv("White mice data - PD-1 15.csv")
+data = pd.read_csv("../mouseData/White mice data - PD-1 15.csv")
 t_treat_p1 = np.array([15,17,19])
 for i in range(1,7):
   param_0[37] = 0.2
@@ -194,7 +194,7 @@ for i in range(1,7):
   plt.legend()
 
   plt.tight_layout()
-  figure_name = "new hypoxia anti PD L1 15 tumor volume vs time " + str(i) + " .png"
+  figure_name = "setonix hypoxia anti PD L1 15 tumor volume vs time " + str(i) + " .png"
   plt.savefig(figure_name)
 
 end_time = time.time()
@@ -202,9 +202,9 @@ time_taken = end_time - start_time
 dataFrame = pd.DataFrame(param_best_list[0:])
 std_devs = dataFrame.std()
 means = dataFrame.mean()
-dataFrame.to_csv("new hypoxia best parameters control.csv", index=False)
-std_devs.to_csv("new hypoxia errors control.csv", index=False)
-means.to_csv("new hypoxia means control.csv", index=False)
+dataFrame.to_csv("setonix hypoxia best parameters control.csv", index=False)
+std_devs.to_csv("setonix hypoxia errors control.csv", index=False)
+means.to_csv("setonix hypoxia means control.csv", index=False)
 f = open("time taken RT.txt", "w")
 f.write("execution time " + str(time_taken))
 f.close()
