@@ -17,8 +17,8 @@ from data_processing import getCellCounts
 data = pd.read_csv("../mouseData/White mice - no treatment.csv")
 #data = data.drop(columns=['3'])
 #print(data.head())
-nit_max = 5
-nit_T = 5
+nit_max = 100
+nit_T = 100
 param = [500000.0,
 0.55,
 0.25,

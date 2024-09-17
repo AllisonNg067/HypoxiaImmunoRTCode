@@ -14,12 +14,12 @@ import pandas as pd
 from differential_equations_hypoxia import radioimmuno_response_model
 import new_data_processing_hypoxia as dp
 from data_processing import getCellCounts
-data = pd.read_csv("White mice - RT only.csv")
+data = pd.read_csv("../mouseData/White mice - RT only.csv")
 #data = data.drop(columns=['3'])
 #print(data.head())
-nit_max = 20
-nit_T = 20
-param = np.array(pd.read_csv("hypoxia means control.csv"))
+nit_max = 5
+nit_T = 5
+param = np.array(pd.read_csv("setonix hypoxia means control.csv"))
 #print(param)
 
 # print(np.array(param))
