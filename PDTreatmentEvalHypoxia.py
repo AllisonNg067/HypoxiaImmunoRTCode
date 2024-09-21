@@ -73,7 +73,7 @@ schedule_list, DList = get_treatment_and_dose(bed, RT_fractions, param, PD_fract
 # Load from CSV
 params = pd.read_csv('hypoxia_parameters.csv').values.tolist()
 sample_size = len(params)
-sample_size = 3
+#sample_size = 3
 #print(params)
 # Now you have a list of parameters for each patient
 # You can now evaluate the treatment schedules in parallel
@@ -81,7 +81,7 @@ def evaluate_patient(i, t_rad, t_treat_p1, t_treat_c4, D):
   # Create a new random number generator with a unique seed for each patient
   paramNew = params[i]
   paramNew[24] = 0
-  paramNew[37] = 0.6/PD_fractions
+  paramNew[37] = 0.8/PD_fractions
   paramNew[0] = initial_cell_count
     #print(paramNew)
   
