@@ -55,7 +55,7 @@ p1 = 0
          #print('errors', errorMerged)
 all_res_list = []
 IT = (True, True)
-RT_fractions = 1
+RT_fractions = 2
 param = [0, 0, 0.15769230769230763, 0.04269230769230769]
 bed = 80
 initial_cell_count = 100000
