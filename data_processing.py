@@ -5,7 +5,7 @@ Created on Fri Dec 15 10:47:04 2023
 @author: allis
 """
 import numpy as np
-from differential_equations import radioimmuno_response_model
+from differential_equations_hypoxia import radioimmuno_response_model
 
 def getCellCounts(data, colNumber):
   #colNumber must be from 1 to 9
