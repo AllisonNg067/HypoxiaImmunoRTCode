@@ -17,8 +17,8 @@ from data_processing import getCellCounts
 data = pd.read_csv("../mouseData/White mice - RT only.csv")
 #data = data.drop(columns=['3'])
 #print(data.head())
-nit_max = 5
-nit_T = 5
+nit_max = 100
+nit_T = 100
 param = np.array(pd.read_csv("setonix hypoxia means control.csv"))
 #print(param)
 
@@ -27,9 +27,9 @@ param = np.array(pd.read_csv("setonix hypoxia means control.csv"))
 param = list(np.transpose(param)[0])
 param_0 = param.copy()
 #print(param_0)
-param_0[3] = 0.75
-param_0[4] = 0.1
-param_0[5] = 1.8
+param_0[3] = 0.9
+param_0[4] = 0.2
+param_0[5] = 1.5
 param_0[24] = 0  # ctla4 dose
 param_0[37] = 0 
 print(param_0)
@@ -97,7 +97,7 @@ for i in range(1, 15):
   plt.legend()
 
   plt.tight_layout()
-  figure_name = "hypoxia RT tumor volume vs time " + str(i) + " .png"
+  figure_name = "constrained alpha hypoxia RT tumor volume vs time " + str(i) + " .png"
   plt.savefig(figure_name)
 
 end_time = time.time()
@@ -105,9 +105,9 @@ time_taken = end_time - start_time
 dataFrame = pd.DataFrame(param_best_list[0:])
 std_devs = dataFrame.std()
 means = dataFrame.mean()
-dataFrame.to_csv("hypoxia best parameters RT.csv", index=False)
-std_devs.to_csv("hypoxia errors RT.csv", index=False)
-means.to_csv("hypoxia means RT.csv", index=False)
+dataFrame.to_csv("constrained alpha hypoxia best parameters RT.csv", index=False)
+std_devs.to_csv("constrained alpha hypoxia errors RT.csv", index=False)
+means.to_csv("constrained alpha hypoxia means RT.csv", index=False)
 f = open("time taken RT.txt", "w")
 f.write("execution time " + str(time_taken))
 f.close()
