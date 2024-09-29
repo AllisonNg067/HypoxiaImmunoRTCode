@@ -89,6 +89,7 @@ t_treat_c4 = np.zeros(3)
 t_treat_p1 = np.zeros(3)
 c4 = 0
 p1 = 0
+param_0[31] = 0.4
 param_0[32] = 0.3
 param_best_list = []
 for i in range(1, 17):

@@ -3,9 +3,9 @@ import numpy as np
 import new_data_processing_hypoxia as dp
 errorControl = pd.read_csv("setonix hypoxia errors control.csv")
 errorControl = list(np.transpose(np.array(errorControl))[0])
-errorRT = pd.read_csv("updated hypoxia errors RT.csv")
+errorRT = pd.read_csv("constrained alpha hypoxia errors RT.csv")
 errorRT = list(np.transpose(np.array(errorRT))[0])
-param = pd.read_csv("updated hypoxia means RT.csv")
+param = pd.read_csv("constrained alpha hypoxia means RT.csv")
 param = list(np.transpose(np.array(param))[0])
 #print(get_equivalent_bed_treatment(param, 50, 1))
 errors = [errorControl, errorRT]

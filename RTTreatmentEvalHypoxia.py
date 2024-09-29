@@ -56,6 +56,7 @@ p1 = 0
 all_res_list = []
 IT = (True, True)
 RT_fractions = 2
+#alpha and beta from fit without hypoxia to get identical schedules to non hypoxia model
 param = [0, 0, 0.15769230769230763, 0.04269230769230769]
 bed = 80
 initial_cell_count = 100000

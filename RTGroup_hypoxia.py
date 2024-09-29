@@ -27,7 +27,7 @@ param = np.array(pd.read_csv("setonix hypoxia means control.csv"))
 param = list(np.transpose(param)[0])
 param_0 = param.copy()
 #print(param_0)
-param_0[3] = 0.9
+param_0[3] = 0.7
 param_0[4] = 0.2
 param_0[5] = 1.5
 param_0[24] = 0  # ctla4 dose

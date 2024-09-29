@@ -83,7 +83,7 @@ def neighbor(param, param_id, T, T_0):
     # Values constraints
     param[1] = max(param[1], param[2])
     param[2] = min(param[1], param[2])
-    param[3] = min(1.5, max(param[3], 0.02))  # alpha_C
+    param[3] = min(1.1, max(param[3], 0.02))  # alpha_C
     param[4] = min(param[3] / 2, max(param[3] / 20, param[4]))  # beta_C
     param[5] = max(1, param[5])
     param[6] = min(0.7, max(param[6], 0.03))  # phi
@@ -100,6 +100,7 @@ def neighbor(param, param_id, T, T_0):
     param[26] = max(0, param[26]) #ni
     param[27] = max(3e-8, param[27])  # a
     param[29] = min(1, param[29])  # q
+    param[31] = max(0, min(param[31], 1.5))
     param[32] = max(0, min(param[32], 0.5))
     param[33] = min(0.01, param[33]) #recovery
     # param(34) constraint: use only with the modified LQ model

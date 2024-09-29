@@ -61,7 +61,7 @@ RT_fractions = 1
 param = [0, 0, 0.15769230769230763, 0.04269230769230769]
 bed = 80
 initial_cell_count = 100000
-file_name = 'hypoxia RT ' + str(RT_fractions) + ' PD ' + str(PD_fractions) + ' a.csv'
+file_name = 'hypoxia RT ' + str(RT_fractions) + ' PD ' + str(PD_fractions) + ' b.csv'
 schedule_list, DList = get_treatment_and_dose(bed, RT_fractions, param, PD_fractions, 0)
 #print('Dlist', DList)
 #print(schedule_list)
@@ -142,7 +142,7 @@ def trial_treatment(i, file):
           #print('tcp', TCPs)
           #print(times)
   treatment_times = [x for x in treatment_times if np.isnan(x) == False]
-  treatment_res_list = [t_rad, D, t_treat_p1, 0.6/PD_fractions, t_treat_c4, 0.2, np.mean(TCPs), np.mean(times), TCPs, times]
+  treatment_res_list = [t_rad, D, t_treat_p1, 0.8/PD_fractions, t_treat_c4, 0, np.mean(TCPs), np.mean(times), TCPs, times]
   return treatment_res_list 
 
 # Define the treatment schedules and doses
@@ -153,7 +153,7 @@ iterations = len(schedule_list)  # Or any other number of iterations
 # for k in range(min(iterations,50)):
 #     print('k', k)
 #     print(params[k])
-args = [(k, params) for k in range(min(iterations,800))]
+args = [(k, params) for k in range(800, min(iterations,1500))]
 # Use a ThreadPoolExecutor to run the iterations in parallel
 with concurrent.futures.ThreadPoolExecutor() as executor:
     data = list(executor.map(lambda p: trial_treatment(*p), args))
